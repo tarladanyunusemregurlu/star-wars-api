@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    gap: 20px;
+    border-bottom: 2px solid #37342d;
+    width: min-content;
+    margin: auto;
+}
+
+.search {
+    width: 200px;
+    border-radius: 20px;
+    padding: 5px 6px;
+    border: 1px solid #ccc;
+    background-color: #351111;
+    outline: 0px;
+}
+
+.button {
+    width: 90px;
+    height: 35px;
+    border: 0px;
+    padding: 4px 16px;
+    border-radius: 99px;
+    background-color: #154D6D;
+}

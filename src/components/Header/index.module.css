@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Star Wars Family';
+    src: url('../../../public/fonts/SF-Distant-Galaxy-Outline.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+.container {
+    text-align: center;
+    padding: 8px 0px;
+}
+.title {
+    font-family: 'Star Wars Family', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: yellow;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
