@@ -6,7 +6,8 @@ const StarshipContext = createContext();
 export const StarshipProvider = ({ children }) => {
   const [starships, setStarships] = useState([]);
   const [starship, setStarship] = useState([]);
-  const [page, setPage] = useState(1);
+  const [next, setNext] = useState('');
+  const [previous, setPrevious] = useState('');
   const [query, setQuery] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,6 +15,8 @@ export const StarshipProvider = ({ children }) => {
   const getStarshipsData = async () => {
     try {
       const starshipsData = await starshipService.getStarships();
+      setNext(starshipsData.next);
+      setPrevious(starshipsData.previous);
       setStarships(starshipsData.results);
       setLoading(false);
     } catch (error) {
@@ -38,7 +41,9 @@ export const StarshipProvider = ({ children }) => {
       const starshipsData = await starshipService.getStarshipsSearchData(
         query.toLowerCase(),
       );
-      setStarships(starshipsData);
+      setNext(starshipsData.next);
+      setPrevious(starshipsData.previous);
+      setStarships(starshipsData.results);
       setLoading(false);
     } catch (error) {
       setError(`Could not fetch starships data keyword = ${query}`);
@@ -47,12 +52,12 @@ export const StarshipProvider = ({ children }) => {
   };
 
   const loadMore = async () => {
-    const newPage = page + 1;
-    setPage((prevState) => prevState + 1);
     try {
-      if (newPage < 5) {
+      if (next) {
         setLoading(true);
-        const starshipsData = await starshipService.loadMoreStarships(newPage);
+        const starshipsData = await starshipService.loadMoreStarships(next);
+        setNext(starshipsData.next);
+        setPrevious(starshipsData.previous);
         setStarships([...starships, ...starshipsData.results]);
         setLoading(false);
       }
@@ -68,8 +73,7 @@ export const StarshipProvider = ({ children }) => {
     loading,
     error,
     query,
-    page,
-    setPage,
+    next,
     setQuery,
     getStarshipsData,
     getStarshipById,

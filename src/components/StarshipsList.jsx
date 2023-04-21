@@ -5,7 +5,7 @@ import styles from './StarshipsList.module.css';
 import LoadMore from './LoadMore';
 
 function StarshipsList() {
-  const { query, starships, error, getStarshipsData } = useStarship();
+  const { starships, query, error, next, getStarshipsData } = useStarship();
 
   useEffect(() => {
     getStarshipsData();
@@ -30,11 +30,13 @@ function StarshipsList() {
           ))}
       </div>
       {query !== null && starships.length === 0 && (
-        <p>Could not fetch starships data</p>
+        <p className={styles.noMatchData}>Could not fetch starships data!</p>
       )}
-      <div className={styles.loadMore}>
-        <LoadMore />
-      </div>
+      {!!next && (
+        <div className={styles.loadMore}>
+          <LoadMore />
+        </div>
+      )}
     </main>
   );
 }

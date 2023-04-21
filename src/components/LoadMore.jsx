@@ -3,15 +3,15 @@ import { useStarship } from '../context/StarshipsContext';
 import styles from './LoadMore.module.css';
 
 function LoadMore() {
-  const { page, loading, loadMore } = useStarship();
+  const { next, loading, loadMore } = useStarship();
 
   return (
-    <button disabled={page === 4} onClick={loadMore}>
+    <button disabled={!next} onClick={loadMore}>
       {loading ? (
         <>
           <span className={styles.spinner}></span>Loading...
         </>
-      ) : page === 4 ? (
+      ) : !next ? (
         'Last Page'
       ) : (
         'Load More'

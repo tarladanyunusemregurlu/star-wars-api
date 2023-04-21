@@ -3,7 +3,7 @@ import styles from './index.module.css';
 import { useStarship } from '../../context/StarshipsContext';
 const SearchInput = () => {
   const [lastQuery, setLastQuery] = useState('');
-  const { query, setQuery, setPage, getStarshipsData, getStarshipsSearchData } =
+  const { query, setQuery, getStarshipsData, getStarshipsSearchData } =
     useStarship();
 
   const searchStarship = () => {
@@ -15,8 +15,8 @@ const SearchInput = () => {
 
   useEffect(() => {
     if (query === '') {
+      setQuery(null);
       getStarshipsData();
-      setPage(1);
     }
   }, [query]);
 

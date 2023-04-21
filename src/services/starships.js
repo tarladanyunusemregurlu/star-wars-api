@@ -14,11 +14,11 @@ const getStarshipById = async (id) => {
 
 const getStarshipsSearchData = async (query) => {
   const response = await axios.get(`${BASE_URL}?search=${query}`);
-  return response.data.results;
+  return response.data;
 };
 
-const loadMoreStarships = async (page) => {
-  const response = await axios.get(`${BASE_URL}?page=${page}`);
+const loadMoreStarships = async (next) => {
+  const response = await axios.get(`${next}`);
   return response.data;
 };
 

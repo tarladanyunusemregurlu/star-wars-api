@@ -2,13 +2,10 @@ import React from 'react';
 import styles from './BackButton.module.css';
 
 import { useNavigate } from 'react-router-dom';
-import { useStarship } from '../context/StarshipsContext';
 
 function BackButton() {
-  const { setPage } = useStarship();
   const navigate = useNavigate();
   const historyBack = () => {
-    setPage(1);
     navigate('/');
   };
 
