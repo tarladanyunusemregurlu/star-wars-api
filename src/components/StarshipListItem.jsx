@@ -11,14 +11,19 @@ function StarshipListItem(props) {
   return (
     <div className={styles.card}>
       <Link to={`/starship/${getStarshipIdFromUrl(props.url)}`}>
-      <img src={starshipImg} alt='Starship' className={styles.image} />
+        <img src={starshipImg} alt='Starship' className={styles.image} />
       </Link>
       <div className={styles.content}>
         <Link to={`/starship/${getStarshipIdFromUrl(props.url)}`}>
           <h3 className={styles.title}>{props.name}</h3>
-        </Link >
-        <p><span className={styles.textBold}>Model:</span>  {props.model}</p>
-        <p><span className={styles.textBold}>Hyperdrive Rating:</span> {props.hyperdrive_rating}</p>
+        </Link>
+        <p>
+          <span className={styles.textBold}>Model:</span> {props.model}
+        </p>
+        <p>
+          <span className={styles.textBold}>Hyperdrive Rating:</span>{' '}
+          {props.hyperdrive_rating}
+        </p>
       </div>
     </div>
   );

@@ -16,6 +16,7 @@
     border: 1px solid #ccc;
     background-color: #351111;
     outline: 0px;
+    color : white
 }
 
 .button {
@@ -25,4 +26,10 @@
     padding: 4px 16px;
     border-radius: 99px;
     background-color: #154D6D;
+    cursor: pointer;
+}
+
+label {
+    font-weight: bolder;
+    font-family: sans-serif;
 }
