@@ -1,5 +1,5 @@
 .container {
-  min-height: calc(100vh - 183px);
+  min-height: calc(100vh - 276px);
   height: 100%;
   padding-right: 20px;
   padding-left: 20px;
@@ -45,6 +45,10 @@
 }
 
 @media (max-width: 600px) {
+  .container {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
   .cards {
     grid-template-columns: repeat(1, 1fr);
   }
