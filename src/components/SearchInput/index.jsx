@@ -16,6 +16,7 @@ const SearchInput = () => {
   useEffect(() => {
     if (query === '') {
       setQuery(null);
+      setLastQuery('');
       getStarshipsData();
     }
   }, [query]);
@@ -28,6 +29,7 @@ const SearchInput = () => {
         placeholder='Name / Model'
         className={styles.search}
         type='text'
+        value={query ? query : ''}
         onChange={(e) => setQuery(e.target.value)}
       />
       <button onClick={searchStarship} className={styles.button}>

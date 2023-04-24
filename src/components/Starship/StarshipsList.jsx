@@ -5,10 +5,21 @@ import { useStarship } from '../../context/StarshipsContext';
 import LoadMore from '../LoadMore';
 
 function StarshipsList() {
-  const { starships, query, error, next, getStarshipsData } = useStarship();
+  const {
+    starships,
+    query,
+    error,
+    next,
+    getStarshipsData,
+    getStarshipsSearchData,
+  } = useStarship();
 
   useEffect(() => {
-    getStarshipsData();
+    if (query !== null && query !== '') {
+      getStarshipsSearchData(query);
+    } else {
+      getStarshipsData();
+    }
   }, []);
 
   if (error) {
