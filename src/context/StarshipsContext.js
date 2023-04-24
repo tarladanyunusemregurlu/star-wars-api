@@ -7,7 +7,6 @@ export const StarshipProvider = ({ children }) => {
   const [starships, setStarships] = useState([]);
   const [starship, setStarship] = useState([]);
   const [next, setNext] = useState('');
-  const [previous, setPrevious] = useState('');
   const [query, setQuery] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,7 +15,6 @@ export const StarshipProvider = ({ children }) => {
     try {
       const starshipsData = await starshipService.getStarships();
       setNext(starshipsData.next);
-      setPrevious(starshipsData.previous);
       setStarships(starshipsData.results);
       setLoading(false);
     } catch (error) {
@@ -42,7 +40,6 @@ export const StarshipProvider = ({ children }) => {
         query.toLowerCase(),
       );
       setNext(starshipsData.next);
-      setPrevious(starshipsData.previous);
       setStarships(starshipsData.results);
       setLoading(false);
     } catch (error) {
@@ -57,7 +54,6 @@ export const StarshipProvider = ({ children }) => {
         setLoading(true);
         const starshipsData = await starshipService.loadMoreStarships(next);
         setNext(starshipsData.next);
-        setPrevious(starshipsData.previous);
         setStarships([...starships, ...starshipsData.results]);
         setLoading(false);
       }

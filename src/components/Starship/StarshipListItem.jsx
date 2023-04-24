@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import starshipImg from './assets/star-wars-img2.jpg';
+import starshipImg from '../assets/star-wars-img2.jpg';
 import styles from './StarshipListItem.module.css';
 
 function StarshipListItem(props) {

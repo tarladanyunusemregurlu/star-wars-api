@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import StarshipListItem from './StarshipListItem';
-import { useStarship } from '../context/StarshipsContext';
 import styles from './StarshipsList.module.css';
-import LoadMore from './LoadMore';
+import { useStarship } from '../../context/StarshipsContext';
+import LoadMore from '../LoadMore';
 
 function StarshipsList() {
   const { starships, query, error, next, getStarshipsData } = useStarship();

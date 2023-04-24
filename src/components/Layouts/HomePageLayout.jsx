@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header';
-import StarshipsList from '../StarshipsList';
 import styles from './HomePageLayout.module.css';
+import StarshipsList from '../Starship/StarshipsList';
 const HomePageLayout = () => {
   return (
     <div className={styles.layout}>

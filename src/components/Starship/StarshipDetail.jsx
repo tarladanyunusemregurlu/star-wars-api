@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useStarship } from '../context/StarshipsContext';
-import starshipImg from './assets/star-wars-img2.jpg';
+import starshipImg from '../assets/star-wars-img2.jpg';
 import styles from './StarshipDetail.module.css';
-import BackButton from './BackButton';
+import BackButton from '../BackButton';
+import { useStarship } from '../../context/StarshipsContext';
 function StarshipDetail() {
   const { id } = useParams();
   const { starship, loading, error, getStarshipById } = useStarship();

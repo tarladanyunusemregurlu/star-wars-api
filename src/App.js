@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import HomePageLayout from './components/Layouts/HomePageLayout';
-import StarshipDetail from './components/StarshipDetail';
+import StarshipDetail from './components/Starship/StarshipDetail';
 
 function App() {
   return (
