@@ -70,6 +70,7 @@ export const StarshipProvider = ({ children }) => {
     error,
     query,
     next,
+    setError,
     setQuery,
     getStarshipsData,
     getStarshipById,
