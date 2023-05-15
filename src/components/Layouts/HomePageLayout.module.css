@@ -1,5 +1,6 @@
 .layout {
   background: linear-gradient(to right, #342931, #111423);
+  min-height: 100vh;
 }
 .loadMore {
   display: flex;

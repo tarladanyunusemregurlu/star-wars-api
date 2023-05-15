@@ -23,7 +23,7 @@ function StarshipsList() {
   }, []);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className={styles.error}>Error: {error}</div>;
   }
 
   return (
